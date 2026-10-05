@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Placement Prediction System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>🎓 Placement Prediction System</h1>
+
+        <p>
+            Machine Learning Based Student Placement Predictor
+        </p>
+
+    </div>
+
+
+    <form
+        action="/predict"
+        method="POST"
+    >
+
+        <!-- ========================= -->
+        <!-- PERSONAL INFORMATION -->
+        <!-- ========================= -->
+
+        <h2>👤 Personal Information</h2>
+
+        <div class="grid">
+
+            <div class="input-box">
+
+                <label>Gender</label>
+
+                <select name="Gender" required>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>City</label>
+
+                <select name="City" required>
+
+                    <option>Ahmedabad</option>
+                    <option>Bangalore</option>
+                    <option>Chennai</option>
+                    <option>Delhi</option>
+                    <option>Hyderabad</option>
+                    <option>Kolkata</option>
+                    <option>Mumbai</option>
+                    <option>Pune</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>College Tier</label>
+
+                <select name="CollegeTier">
+
+                    <option value="Tier1">
+                        Tier 1
+                    </option>
+
+                    <option value="Tier2">
+                        Tier 2
+                    </option>
+
+                    <option value="Tier3">
+                        Tier 3
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>Stream</label>
+
+                <select name="Stream">
+
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="IT">IT</option>
+                    <option value="Mechanical">
+                        Mechanical
+                    </option>
+                    <option value="Civil">
+                        Civil
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>Specialisation</label>
+
+                <select name="Specialisation">
+
+                    <option value="DataScience">
+                        Data Science
+                    </option>
+
+                    <option value="Networking">
+                        Networking
+                    </option>
+
+                    <option value="AI">
+                        AI
+                    </option>
+
+                    <option value="CyberSecurity">
+                        Cyber Security
+                    </option>
+
+                    <option value="CloudComputing">
+                        Cloud Computing
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>Hostel</label>
+
+                <select name="Hostel">
+
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>History Of Backlogs</label>
+
+                <select name="HistoryOfBacklogs">
+
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- ACADEMIC INFORMATION -->
+        <!-- ========================= -->
+
+        <h2>📚 Academic Information</h2>
+
+        <div class="grid">
+
+            <div class="input-box">
+                <label>SGPA Semester 1</label>
+                <input type="number"
+                       name="SGPA_Sem1"
+                       step="0.01"
+                       min="0"
+                       max="10"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>SGPA Semester 2</label>
+                <input type="number"
+                       name="SGPA_Sem2"
+                       step="0.01"
+                       min="0"
+                       max="10"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>SGPA Semester 3</label>
+                <input type="number"
+                       name="SGPA_Sem3"
+                       step="0.01"
+                       min="0"
+                       max="10"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>SGPA Semester 4</label>
+                <input type="number"
+                       name="SGPA_Sem4"
+                       step="0.01"
+                       min="0"
+                       max="10"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>SGPA Semester 5</label>
+                <input type="number"
+                       name="SGPA_Sem5"
+                       step="0.01"
+                       min="0"
+                       max="10"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>SGPA Semester 6</label>
+                <input type="number"
+                       name="SGPA_Sem6"
+                       step="0.01"
+                       min="0"
+                       max="10"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>SGPA Semester 7</label>
+                <input type="number"
+                       name="SGPA_Sem7"
+                       step="0.01"
+                       min="0"
+                       max="10"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>SGPA Semester 8</label>
+                <input type="number"
+                       name="SGPA_Sem8"
+                       step="0.01"
+                       min="0"
+                       max="10"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>CGPA</label>
+                <input type="number"
+                       name="CGPA"
+                       step="0.01"
+                       min="0"
+                       max="10"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>Attendance %</label>
+                <input type="number"
+                       name="AttendancePercent"
+                       step="0.1"
+                       min="0"
+                       max="100"
+                       required>
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- SKILLS & ACTIVITIES -->
+        <!-- ========================= -->
+
+        <h2>💻 Skills & Activities</h2>
+
+        <div class="grid">
+
+            <div class="input-box">
+                <label>Internships</label>
+                <input type="number"
+                       name="Internships"
+                       min="0"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>Projects</label>
+                <input type="number"
+                       name="Projects"
+                       min="0"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>Workshops</label>
+                <input type="number"
+                       name="Workshops"
+                       min="0"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>Certifications</label>
+                <input type="number"
+                       name="Certifications"
+                       min="0"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>Publications</label>
+                <input type="number"
+                       name="Publications"
+                       min="0"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>Aptitude Score</label>
+                <input type="number"
+                       name="AptitudeTestScore"
+                       step="0.1"
+                       min="0"
+                       max="100"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>Soft Skills Rating</label>
+                <input type="number"
+                       name="SoftSkillsRating"
+                       step="0.1"
+                       min="0"
+                       max="5"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>Coding Test Score</label>
+                <input type="number"
+                       name="CodingTestScore"
+                       step="0.1"
+                       min="0"
+                       max="100"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <label>Mock Interview Score</label>
+                <input type="number"
+                       name="MockInterviewScore"
+                       step="0.1"
+                       min="0"
+                       max="100"
+                       required>
+            </div>
+
+            <div class="input-box">
+
+                <label>Extra Curricular</label>
+
+                <select name="ExtraCurricular">
+
+                    <option value="0">
+                        No
+                    </option>
+
+                    <option value="1">
+                        Yes
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>CGPA Tier</label>
+
+                <select name="CGPA_Tier">
+
+                    <option value="Low">
+                        Low
+                    </option>
+
+                    <option value="Medium">
+                        Medium
+                    </option>
+
+                    <option value="High">
+                        High
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <button type="submit">
+            🔮 PREDICT PLACEMENT
+        </button>
+
+    </form>
+
+
+    <!-- ========================= -->
+    <!-- RESULT -->
+    <!-- ========================= -->
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <h2>
+            🎯 Prediction Result
+        </h2>
+
+        <h1>
+            {{ prediction }}
+        </h1>
+
+        <div class="probability">
+
+            Placement Probability
+
+            <strong>
+                {{ probability }}%
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    {% if recommendations %}
+
+    <div class="recommendations">
+
+        <h2>
+            💡 Suggestions
+        </h2>
+
+        <ul>
+
+            {% for item in recommendations %}
+
+            <li>
+                {{ item }}
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    {% endif %}
+
+    {% endif %}
+
+
+    {% if error %}
+
+    <div class="error">
+
+        {{ error }}
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
